@@ -10,5 +10,6 @@ type Companies struct {
 	Type        string `gorm:"not null"`
 	WebsiteURL  string `gorm:"not null"`
 	Email       string `gorm:"not null"`
-	AddressesID uint   `gorm:"not null"`
+	AddressID uint   `gorm:"not null"`
+	Addresses Addresses `gorm:"foreignKey:AddressID;references:id"`
 }

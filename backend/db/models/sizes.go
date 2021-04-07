@@ -12,6 +12,5 @@ type Sizes struct {
 	Height  float64 `gorm:"not null"`
 	ShapeID uint    `gorm:"not null"`
 	Volume  float64
+	Shapes Shapes `gorm:"foreignKey:ShapeID;references:id"`
 }
-
-//Countries Countries `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`

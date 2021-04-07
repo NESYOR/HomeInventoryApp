@@ -26,6 +26,8 @@ CREATE TABLE "INVENTORY_LOCATION" (
     name text NOT NULL,
     description text NOT NULL,
     image_url text,
+    Latitude REAL NOT NULL,
+    Longitude REAL NOT NULL,
     created_on TIMESTAMP NOT NULL,
     updated_on TIMESTAMP NOT NULL
 );

@@ -12,4 +12,6 @@ type Addresses struct {
 	zipcode        string `gorm:"not null"`
 	longitude      string
 	latitude       string
+	States States `gorm:"foreignKey:StateID;references:id"`
+	Countries     Countries `gorm:"foreignKey:CountryID;references:id"`
 }

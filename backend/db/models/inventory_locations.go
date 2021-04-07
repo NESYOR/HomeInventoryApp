@@ -4,7 +4,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type Inventory_Locations struct {
+type InventoryLocations struct {
 	gorm.Model
 	Name        string `gorm:not null`
 	Description string `gorm:not null`

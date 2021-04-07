@@ -4,7 +4,8 @@ import (
 	"gorm.io/gorm"
 )
 
-type Related_Items struct {
+type RelatedItems struct {
 	gorm.Model
 	ItemID uint `gorm:"not null"`
+	Items Items `gorm:"foreignKey:ItemID;references:id"`
 }

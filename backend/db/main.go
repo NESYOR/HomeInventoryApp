@@ -2,12 +2,11 @@ package main
 
 import (
 	"log"
-
 	"./migrations"
 )
 
 func main() {
-	log.Println("intializing DB")
+	log.Println("initializing DB")
 	migrations.Initdb()
 
 }
