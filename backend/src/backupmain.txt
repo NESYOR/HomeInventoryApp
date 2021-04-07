@@ -1,0 +1,75 @@
+// package main
+
+// import (
+// 	"encoding/csv"
+// 	"fmt"
+// 	"io"
+// 	"log"
+// 	"os"
+// 	"reflect"
+// 	"time"
+
+// 	"github.com/gofiber/fiber/v2"
+// 	"gorm.io/driver/postgres"
+// 	"gorm.io/gorm"
+// )
+// type Users struct{
+// 	gorm.Model
+// Email string `gorm:"<-"`
+// Name string `gorm:"<-"`
+// Password string `gorm:"<-"`
+// Last_Login time.Time `gorm:"<-"`
+
+// }
+// var users []Users
+// func initdb(){
+// 	  dsn := "host=172.18.0.3 user=admin password=Admin dbname=inventory_app port=5432 sslmode=disable "
+// 	  db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+// 	  if err !=nil{
+// 		  panic("Database connection Error")
+// 	  }
+// 	  fmt.Println("connection opened")
+// 	  fmt.Println("Migrating DB")
+// 	  db.AutoMigrate(Users{})
+// 	  fmt.Println("Populating Database")
+// 	  fmt.Println("var1 = ", reflect.ValueOf(db).Kind())
+
+// 	  //populateusers(&db)
+// 	  //db.Find(&users)
+// 	  //fmt.Println(users)
+// }
+// func populateusers(){
+// 	csvfile, err := os.Open("../db/seed/users.csv")
+// 	if err != nil {
+// 		log.Fatalln("Couldn't open the csv file", err)
+// 	}
+
+// 	// Parse the file
+// 	r := csv.NewReader(csvfile)
+// 	//r := csv.NewReader(bufio.NewReader(csvfile))
+
+// 	// Iterate through the records
+// 	for {
+// 		// Read each record from csv
+// 		record, err := r.Read()
+// 		if err == io.EOF {
+// 			break
+// 		}
+// 		if err != nil {
+// 			log.Fatal(err)
+// 		}
+// 		fmt.Printf("Question: %s Answer %s\n", record[0], record[1])
+// 	}
+// }
+// func main() {
+// //	populateusers()
+
+// 	app := fiber.New()
+
+// 	app.Get("/", func(c *fiber.Ctx) error {
+// 		return c.SendString("Hello From Fiber 🔥")
+// 	})
+// 	initdb()
+// 	app.Listen(":3000")
+
+// }

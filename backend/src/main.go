@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/gouthamreddy09/HomeInventoryApp/constants/TableNames"
+	"./constants"
 )
 
 func main() {
-	fmt.Println(TableNames.TableNames)
+	fmt.Println(constants.TableNames)
+	fmt.Println(constants.Messages["Error"])
 }
